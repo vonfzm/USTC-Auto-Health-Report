@@ -3,7 +3,7 @@
 
 **本打卡脚本仅供学习交流使用，请勿过分依赖。开发者对使用或不使用本脚本造成的问题不负任何责任，不对脚本执行效果做出任何担保，原则上不提供任何形式的技术支持。**
 
-本项目来源于不知道愿不愿意透露姓名的已经下架的同名项目（愿意请联系我写上原作者），稍加修改适应了3月30日增加宿舍号后的系统，并加入了电报机器人自动反馈打卡与报备结果。使用方法部分参考了中国滑稽大学(University of Ridiculous of China)健康打卡平台自动打卡脚本。
+本项目来源于不知道愿不愿意透露姓名的已经下架的同名项目（愿意请联系我写上原作者），稍加修改适应了3月30日增加宿舍号后的系统，并加入了电报机器人自动反馈打卡与报备结果。使用方法部分参考了[中国滑稽大学(University of Ridiculous of China)健康打卡平台自动打卡脚本](https://github.com/Kobe972/USTC-ncov-AutoReport)。
 
 - [x] 统一身份认证登录
     - [x] 验证码绕过
@@ -63,7 +63,7 @@ python main.py
 
 ### 定时打卡
 
-本地运行的话自己设置Crontab、Launchd之类的方法来定时运行吧，要注意的是Crontab在Mac睡眠时是不会运行的，Launchd也需要先把电脑唤醒才行。也可以参考中国滑稽大学(University of Ridiculous of China)健康打卡平台自动打卡脚本里利用GitHub服务器定时打卡的方法。
+本地运行的话自己设置Crontab、Launchd之类的方法来定时运行吧，要注意的是Crontab在Mac睡眠时是不会运行的，Launchd也需要先把电脑唤醒才行。也可以参考[中国滑稽大学(University of Ridiculous of China)健康打卡平台自动打卡脚本](https://github.com/Kobe972/USTC-ncov-AutoReport)里利用GitHub服务器定时打卡的方法。
 
 ## post.json 数据获取方法
 
