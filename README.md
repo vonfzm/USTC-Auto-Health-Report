@@ -72,7 +72,7 @@ python main.py
 
 ![](./imgs/1.png)
 
-2. 点击确认上报，点击抓到的 `daliy_report` 请求，在 `Payload`(图是老图，现在不是Header里了) 下面找到 `Form Data` 这就是每次上报提交的信息参数。
+2. 点击确认上报，点击抓到的 `daliy_report` 请求，在`PHeaders`或者 `Payload`下面找到 `Form Data` 这就是每次上报提交的信息参数。
 
 ![](./imgs/2.png)
 
