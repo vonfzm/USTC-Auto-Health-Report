@@ -45,11 +45,11 @@ pip install -r requirements.txt
 0. 这是为了在telegram中自动反馈你有没有打卡和报备成功，如果不需要，请把ustc_auto_report.py中的第7、8、9、67、68、69、70、114、115、116、117行删掉。
 
 1. 请确保自己运行脚本的终端能够科学上网，比如Mac版Clash X Pro开启Enhanced Mode，Windows cmd中
-```shell
-set http_proxy=http://127.0.0.1:xxxx
-set https_proxy=http://127.0.0.1:xxxx
-```
-之类的，不具体说了，自行百度亿下。
+    ```shell
+    set http_proxy=http://127.0.0.1:xxxx
+    set https_proxy=http://127.0.0.1:xxxx
+    ```
+    之类的，不具体说了，自行百度亿下。
 
 2. 去认领一个Telegram机器人并记住它的token，具体方法可以看看这个https://core.telegram.org/bots#6-botfather 。去开一个Telegram频道，获取它的id，或者想私信收到的话就获取你自己的聊天id，方法很多可以百度亿下。需要注意的是频道要把你的bot添加为管理员，私信的话你需要先给你的bot发个/start它才能给你发私信。
 
