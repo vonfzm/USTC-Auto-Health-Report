@@ -1,0 +1,7 @@
+requests~=2.26.0
+lxml~=4.6.5
+beautifulsoup4~=4.10.0
+bs4~=0.0.1
+python-telegram-bot~=13.11
+Telegram~=0.0.1
+wheel~=0.36.2
