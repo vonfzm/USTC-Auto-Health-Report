@@ -65,9 +65,9 @@ class USTCAutoHealthReport(object):
             response = self.sess.post(self.clock_in_url, data=post_data)
             s1 = self._check_success(response)
             if s1:
-                bot.send_message(chat_id=chat_id,text='打卡成功')
+                bot.send_message(chat_id=chat_id,text='谋谋打卡成功')
             else:
-                bot.send_message(chat_id=chat_id,text='打卡失败')
+                bot.send_message(chat_id=chat_id,text='谋谋打卡失败')
             return s1
         except Exception as e:
             print(e)
@@ -102,20 +102,42 @@ class USTCAutoHealthReport(object):
         申请成功返回True,申请失败返回False
         :param apply_data_file表单数据文件
         """
-        try:
-            with open(apply_data_file, 'r') as f:
-                post_data = json.loads(f.read())
-            now = datetime.datetime.now()
-            post_data['_token'] = self.token
-            post_data['start_date'] = now.strftime("%Y-%m-%d %H:%M:%S")
-            post_data['end_date'] = now.strftime("%Y-%m-%d 23:59:59")
-            response = self.sess.post(self.stayinout_apply_url, data=post_data)
-            s2 = self._check_success(response)
-            if s2:
-                bot.send_message(chat_id=chat_id,text='报备成功')
-            else:
-                bot.send_message(chat_id=chat_id,text='报备失败')
-            return s2
-        except Exception as e:
-            print(e)
-            return False
+        now = datetime.datetime.now()
+        today = datetime.date.today()
+        tomorrow = today + datetime.timedelta(days=1)
+        d_time1 = datetime.datetime.strptime(str(datetime.datetime.now().date())+'20:00', '%Y-%m-%d%H:%M')
+        d_time2 =  datetime.datetime.strptime(str(datetime.datetime.now().date())+'23:55', '%Y-%m-%d%H:%M')
+        if now > d_time1 and now<d_time2:
+            try:
+                with open(apply_data_file, 'r') as f:
+                    post_data = json.loads(f.read())
+                post_data['_token'] = self.token
+                post_data['start_date'] = now.strftime("%Y-%m-%d %H:%M:%S")
+                post_data['end_date'] = tomorrow.strftime('%Y-%m-%d 23:59:59')
+                response = self.sess.post(self.stayinout_apply_url, data=post_data)
+                s2 = self._check_success(response)
+                if s2:
+                    bot.send_message(chat_id=chat_id,text='报备成功')
+                else:
+                    bot.send_message(chat_id=chat_id,text='报备失败')
+                return s2
+            except Exception as e:
+                print(e)
+                return False
+        else:
+            try:
+                with open(apply_data_file, 'r') as f:
+                    post_data = json.loads(f.read())
+                post_data['_token'] = self.token
+                post_data['start_date'] = now.strftime("%Y-%m-%d %H:%M:%S")
+                post_data['end_date'] = now.strftime("%Y-%m-%d 23:59:59")
+                response = self.sess.post(self.stayinout_apply_url, data=post_data)
+                s2 = self._check_success(response)
+                if s2:
+                    bot.send_message(chat_id=chat_id,text='报备成功')
+                else:
+                    bot.send_message(chat_id=chat_id,text='报备失败')
+                return s2
+            except Exception as e:
+                print(e)
+                return False
