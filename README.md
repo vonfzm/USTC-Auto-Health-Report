@@ -62,7 +62,7 @@ pip install -r requirements.txt
 
 ### 配置Telegram机器人
 
-0. 这是为了在telegram中自动反馈你有没有打卡和报备成功，如果不需要，请把ustc_auto_report.py中的第7、8、9、67、68、69、70、114、115、116、117行删掉。
+0. 这是为了在telegram中自动反馈你有没有打卡和报备成功，如果不需要，请把ustc_auto_report.py中的第7-9、67-70、119-122、136-139行删掉。
 
 1. 请确保自己运行脚本的终端能够科学上网，比如Mac版Clash X Pro开启Enhanced Mode，Windows cmd中
     ```shell
