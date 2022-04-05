@@ -65,9 +65,9 @@ class USTCAutoHealthReport(object):
             response = self.sess.post(self.clock_in_url, data=post_data)
             s1 = self._check_success(response)
             if s1:
-                bot.send_message(chat_id=chat_id,text='谋谋打卡成功')
+                bot.send_message(chat_id=chat_id,text='打卡成功')
             else:
-                bot.send_message(chat_id=chat_id,text='谋谋打卡失败')
+                bot.send_message(chat_id=chat_id,text='打卡失败')
             return s1
         except Exception as e:
             print(e)
