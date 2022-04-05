@@ -70,7 +70,7 @@ pip install -r requirements.txt
 
 2. 去认领一个Telegram机器人并记住它的token，具体方法可以看看这个https://core.telegram.org/bots#6-botfather 。去开一个Telegram频道，获取它的id，或者想私信收到的话就获取你自己的聊天id，方法很多可以百度亿下。需要注意的是频道要把你的bot添加为管理员，私信的话你需要先给你的bot发个/start它才能给你发私信。
 
-3. 替换ustc_auto_report.py第7、8行为你的频道、个人id信息和机器人token。可选：替换68、70、115、117行的text部分为你想要的提醒文字。
+3. 替换ustc_auto_report.py第7、8行为你的频道、个人id信息和机器人token。可选：替换68、70、120、122、137、139行的text部分为你想要的提醒文字。
 
 ### 运行打卡程序
 
@@ -80,7 +80,10 @@ python main.py
 
 ### 定时打卡
 
+目前设置的时间是每天0：00到20：00申请到当天23:59:59，20:00到23:55是申请到第二天晚上23:59:59，不要在23:55之后的五分钟里运行这个脚本。本地运行时是获取的本地时间，如果放在服务器上运行要注意服务器时间，有的是UTC时间什么的，千万注意。
+
 本地运行的话自己设置Crontab、Launchd之类的方法来定时运行吧，要注意的是Crontab在Mac睡眠时是不会运行的，Launchd也需要先把电脑唤醒才行。也可以参考[中国滑稽大学(University of Ridiculous of China)健康打卡平台自动打卡脚本](https://github.com/Kobe972/USTC-ncov-AutoReport)里利用GitHub服务器定时打卡的方法。
+
 
 ## post.json 数据获取方法
 
