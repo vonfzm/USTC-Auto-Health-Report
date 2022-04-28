@@ -97,7 +97,7 @@ pip install -r requirements.txt
 ```shell
 python newtime.py
 ```
-并检查新生成的Screenshot_Alipay.jpg和Screenshot_Wechat.jpg里三个数字的大小、位置是否合适，不合适就去newtime.py里改，都注释过了。反复调整直到比较真实为止。
+   并检查新生成的Screenshot_Alipay.jpg和Screenshot_Wechat.jpg里三个数字的大小、位置是否合适，不合适就去newtime.py里改，都注释过了。反复调整直到比较真实为止。
 
 ### 运行打卡程序
 
