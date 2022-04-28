@@ -7,7 +7,7 @@ import datetime
 # 安康
 now_str = datetime.datetime.now().strftime('%Y-%m-%d')
 now = datetime.datetime.strptime(now_str, "%Y-%m-%d")
-past = datetime.datetime.strptime("2021-7-18", "%Y-%m-%d") #接种完成时间
+past = datetime.datetime.strptime("2021-9-26", "%Y-%m-%d") #接种完成时间
 days = (now - past).days
 
 bk_img = cv2.imread("akm.jpg")
