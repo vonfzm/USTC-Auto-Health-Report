@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import datetime
 import os
 import telegram
+import requests
 
 chat_id = '你的频道号/自己账号，是一长串数字嗷'
 token = '你机器人的号码'
@@ -24,6 +25,8 @@ class USTCAutoHealthReport(object):
         self.report_url = 'https://weixine.ustc.edu.cn/2020/apply/daliy/post'
         # 每日进出校申请url
         self.stayinout_apply_url = 'https://weixine.ustc.edu.cn/2020/apply/daliy/post'
+        # 上传两码url
+        self.upload_code_url = 'https://weixine.ustc.edu.cn/2020/upload/xcm'
         # 身份认证token
         self.token = ''
 
@@ -72,7 +75,42 @@ class USTCAutoHealthReport(object):
         except Exception as e:
             print(e)
             return False
+        
+    def upload_code(self):
+            data = self.sess.get(
+                "https://weixine.ustc.edu.cn/2020/upload/xcm"
+            ).text
+            data = data.encode("ascii", "ignore").decode("utf-8", "ignore")
+            soup = BeautifulSoup(data, "html.parser")
+            token = soup.find("input", {"name": "_token"})["value"]
 
+            def run_update(fnm, n):
+                data = [
+                    ("_token", token),
+                    ("id", "WU_FILE_0"),
+                ]
+                files = {
+                    "file": (
+                        fnm,
+                        open(fnm, "rb"),
+                        "image/jpeg",
+                        {},
+                    )
+                }
+                post = self.sess.post(
+                    "https://weixine.ustc.edu.cn/2020/upload/" + str(n) + "/image",
+                    data=data,
+                    files=files,
+                )
+                if "true" not in post.text:
+                    print("update failed")
+                    return False
+                return True
+
+            if run_update("Screenshot_Wechat.jpg", 1) & run_update("Screenshot_Alipay.jpg", 2):
+                print("update successful")
+                return True
+            
     def weekly_report(self):
         """
         报备函数
