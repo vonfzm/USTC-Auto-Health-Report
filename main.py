@@ -1,5 +1,6 @@
 from ustc_auto_report import USTCAutoHealthReport
 import random,time
+
 # 随机时间延迟，单位为秒
 time.sleep(random.randint(0, 300))
 bot = USTCAutoHealthReport()
