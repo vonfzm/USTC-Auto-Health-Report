@@ -67,6 +67,20 @@ pip install -r requirements.txt
 
 3. 在post.json中修改自己的宿舍、紧急联系人等信息，数据获取方法请见下面post.json 数据获取方法。不要删双引号。
 
+## post.json 数据获取方法
+
+使用 F12 开发者工具抓包之后得到数据，按照 json 格式写入 `post.json` 中。
+
+1. 登录进入 `https://weixine.歪比巴卜.edu.cn/2020/`，打开开发者工具（Chrome 可以使用 F12 快捷键），选中 Network 窗口：
+
+![](./imgs/1.png)
+
+2. 点击确认上报，点击抓到的 `daliy_report` 请求，在`Headers`或者 `Payload`下面找到 `Form Data` 这就是每次上报提交的信息参数。
+
+![](./imgs/2.png)
+
+3. 将找到的 Data 除 `_token` （每次都会改变，所以不需要复制，脚本中会每次获取新的 token 并添加到要提交的数据中）外都复制下来，存放在 `post.json` 中，并参考示例文件转换为对应的格式。
+
 ### 选择自己要使用的功能（重要）
 
 在main.py中，把自己不需要的功能注释掉或删掉。每个功能都注释过了。或者需要自动上传两码就把第11、12行取消注释。也可以更改4、12行的随机延迟时间以模拟真人或适应自己的网络。
@@ -112,21 +126,6 @@ python main.py
 目前设置的时间是每天0：00到20：00申请到当天23:59:59，20:00到23:55是申请到第二天晚上23:59:59，不要在23:55之后的五分钟里运行这个脚本。本地运行时是获取的本地时间，如果放在服务器上运行要注意服务器时间，有的是UTC时间什么的，千万注意。如果需要使用两码功能，务必设置提前运行newtime.py。
 
 本地运行的话自己设置Crontab、Launchd之类的方法来定时运行吧，要注意的是Crontab在Mac睡眠时是不会运行的，Launchd也需要先把电脑唤醒才行。也可以参考[中国滑稽大学(University of Ridiculous of China)健康打卡平台自动打卡脚本](https://github.com/Kobe972/USTC-ncov-AutoReport)里利用GitHub服务器定时打卡的方法。
-
-
-## post.json 数据获取方法
-
-使用 F12 开发者工具抓包之后得到数据，按照 json 格式写入 `post.json` 中。
-
-1. 登录进入 `https://weixine.歪比巴卜.edu.cn/2020/`，打开开发者工具（Chrome 可以使用 F12 快捷键），选中 Network 窗口：
-
-![](./imgs/1.png)
-
-2. 点击确认上报，点击抓到的 `daliy_report` 请求，在`Headers`或者 `Payload`下面找到 `Form Data` 这就是每次上报提交的信息参数。
-
-![](./imgs/2.png)
-
-3. 将找到的 Data 除 `_token` （每次都会改变，所以不需要复制，脚本中会每次获取新的 token 并添加到要提交的数据中）外都复制下来，存放在 `post.json` 中，并参考示例文件转换为对应的格式。
 
 
 ## 许可
