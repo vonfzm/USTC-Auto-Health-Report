@@ -3,7 +3,7 @@
 
 **本打卡脚本仅供学习交流使用，请勿过分依赖。开发者对使用或不使用本脚本造成的问题不负任何责任，不对脚本执行效果做出任何担保，原则上不提供任何形式的技术支持。** ~~毕竟小孩子不懂事乱写的~~
 
-本项目来源于不知道愿不愿意透露姓名的已经下架的同名项目（愿意请联系我写上原作者），稍加修改以适应新的系统，并加入了电报机器人自动反馈打卡与报备结果。readme中使用方法部分参考了[中国滑稽大学(University of Ridiculous of China)健康打卡平台自动打卡脚本](https://github.com/Kobe972/USTC-ncov-AutoReport)。生成两码的部分参考了[USTC健康打卡平台自动打卡脚本](https://github.com/cyzkrau/AutoDailyReport-For-USTC)并略作改进。
+本项目来源于[USTC-Auto-Health-Report](https://github.com/windshadow233/USTC-Auto-Health-Report)，稍加修改以适应新的系统，并加入了电报机器人自动反馈打卡与报备结果。readme中使用方法部分参考了[中国滑稽大学(University of Ridiculous of China)健康打卡平台自动打卡脚本](https://github.com/Kobe972/USTC-ncov-AutoReport)。生成两码的部分参考了[USTC健康打卡平台自动打卡脚本](https://github.com/cyzkrau/AutoDailyReport-For-USTC)并略作改进。
 
 # 更新日志
 
