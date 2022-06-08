@@ -4,6 +4,7 @@ import numpy as np
 import random,time
 import datetime
 
+‘’‘
 # 安康
 now_str = datetime.datetime.now().strftime('%Y-%m-%d')
 now = datetime.datetime.strptime(now_str, "%Y-%m-%d")
@@ -23,6 +24,8 @@ bk_img = np.array(img_pil)
 cv2.imwrite("Screenshot_Alipay.jpg",bk_img)
 
 time.sleep(random.randint(7, 13))
+’‘’
+
 # 行程
 bk_img = cv2.imread("xcm.jpg")
 font = ImageFont.truetype("Arial Unicode.ttf", 38)# 行程码时间字体大小
